@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% block tittle %}NotasPro - Login{% endblock %}
+{% block body %}
+<div style="margin-top: 80px; margin-bottom: 80px;">
+<form method="post" class="form-signin">
+  {% csrf_token %}
+  <h2 class="form-signin-heading">Iniciar Sesión</h2>
+  <div class="form-group">
+    <label for="InputUsername">Nombre de usuario</label>
+    <input class="form-control" name="username" placeholder="Nombre de usuario" type="text">
+    <label for="InputPassword">Contraseña</label>
+    <input class="form-control" name="password" placeholder="Contraseña" type="password">
+  </div>
+  <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar</button>
+</form>
+</div>
+{% endblock %}

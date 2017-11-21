@@ -1,0 +1,81 @@
+{% extends 'base.html' %} 
+{% block tittle %}NotasPro - Bienvenido{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">NotesPro</a>
+        <img style="display: inline-block; height: 30px; margin-top: -5px" src="http://cdn.makeuseof.com/wp-content/uploads/2012/10/tomboy_intro.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="/login">
+                    <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+                    </a>
+                    <button type="button" class="btn btn-secondary">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</nav>
+<div class="container" style="padding-top: 15px;">
+    <div class="jumbotron">
+        <h1 class="display-3">NotesPro</h1>
+        <div class="col-lg-4 col-md-offset-10"></div>
+        <p>NotesPro destaca por la sencillez de su interfaz, a la vez que resulta agradable.
+            NotesPro te permite escribir y organizar tus notas en diferentes libros y organizados 
+            por etiquetas, y puedes crear tanto notas escritas, o con imágenes. Te ayuda a mejorar
+             tu productividad manteniendo ordenadas tus notas, ya sean escritas o de imagen a las 
+             que podrás acceder a través de tu cuenta en la nube</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="#">Acerca de</a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-offset-10">
+            <div class="card">
+                <h3 class="card-header">Simplicidad</h3>
+                <img style="height: 200px; width: 100%; display: block;" src="{% static 'img/simple.jpg' %}"
+                alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">Tan simple como escribir en un papel</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <h3 class="card-header">Rapidez</h3>
+                <img style="height: 200px; width: 100%; display: block;" src="{% static 'img/rapido.jpg' %}"
+                    alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">NotesPro es agil te permite escribir rápidamente los que necesitas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <h3 class="card-header">Adaptable</h3>
+                <img style="height: 200px; width: 100%; display: block;" src="{% static 'img/adaptable.jpg' %}"
+                    alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">Se adapta a cualquier pantalla, tanto PC, smartphone y tables.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
