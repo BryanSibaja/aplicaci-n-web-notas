@@ -123,4 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-LOGIN_REDIRECT_URL = 'https://getbootstrap.com/docs/4.0/examples/signin/'
+LOGIN_REDIRECT_URL = '/editor'
