@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block tittle %}NotasPro - Login{% endblock %} {% block body %}
+    <div style="margin-top: 20px; margin-bottom: 80px;">
+        <form method="POST" class="form-signin">
+            {% csrf_token %} {{form.as_p}}
+            <p>
+                <input class="btn btn-primary" type='submit' value="Registrar" />
+            </p>
+        </form>
+    </div>
+{% endblock %}

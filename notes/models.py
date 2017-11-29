@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Libro(models.Model):
     nombre = models.CharField(null=False, max_length=35)
@@ -9,7 +9,7 @@ class Libro(models.Model):
 
 class Nota(models.Model):
     titulo = models.CharField(max_length = 35, null=False)
-    cuerpo = models.TextField(null=False)
+    cuerpo = RichTextUploadingField()
     creacion = models.DateField(null=False)
     actualizacion = models.DateField(null=False)
     borrado = models.BooleanField()

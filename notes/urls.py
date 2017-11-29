@@ -4,5 +4,5 @@ from notes.views import index, editor, registro
 urlpatterns = [
     url(r'^$', index),
     url(r'^editor/$', editor),
-    url(r'^registro/$', registro)
+    url(r'^create_user/$', registro)
 ]

@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',login, {'template_name' : 'login.html'}, name='login'),
     url(r'^logout/$', logout, {'next_page': '/'}, name='logout'),
-    url(r'', include('notes.urls'))
+    url(r'', include('notes.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls'))
 ]
