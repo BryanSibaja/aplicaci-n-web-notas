@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from notes.forms import UserForm, EditorForm
+from notes.forms import UserForm, EditorForm, LoginForm
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import login
 
 def index(request):
     return render(request,'home.html')
@@ -16,9 +16,13 @@ def editor(request):
         form = EditorForm()
     return render(request, 'editor.html',{'form' : form})
 
+def acceder(request):
+    return login(request, template_name = "login.html", authentication_form= LoginForm)
+
+
 def registro(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -27,5 +31,5 @@ def registro(request):
             login(request, user)
             return render(request,'home.html')
     else:
-        form = UserCreationForm()
+        form = UserForm()
     return render(request, 'create_user.html', {'form': form})

@@ -1,16 +1,30 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from notes.models import Nota
 
-class UserForm(forms.ModelForm):
+class LoginForm(AuthenticationForm):
     class Meta:
         model = User
-        fields = ('username','email','password','first_name','last_name')
-        widgets = {
-            'password': forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}),
-            'email': forms.TextInput(attrs={'class': 'form-control', 'type': 'email'}),
-            'username': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+        fields = ('username','password')
+
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['password'].widget.attrs['class'] = 'form-control'
+
+class UserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ('username','password1','password2')
+
+    def __init__(self, *args, **kwargs):
+        super(UserForm, self).__init__(*args, **kwargs)
+
+        self.fields['username'].widget.attrs['class'] = 'form-control'
+        self.fields['password1'].widget.attrs['class'] = 'form-control'
+        self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 class EditorForm(forms.ModelForm):
     class Meta:
