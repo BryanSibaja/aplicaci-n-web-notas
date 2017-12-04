@@ -8,12 +8,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">NotesPro</a>
-            <img style="display: inline-block; height: 30px; margin-top: -5px" src="http://cdn.makeuseof.com/wp-content/uploads/2012/10/tomboy_intro.jpg">
+    
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">NotasPro</a>
+            <img style="display: inline-block; height: 40px; margin-top: -5px" src="{% static 'img/note.png' %}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-                aria-expanded="false" aria-label="Toggle navigation" style="">
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -24,22 +28,14 @@
                 <form class="form-inline my-2 my-lg-0">
                     {% block nav %}
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="/accounts/login">
-                            <button type="button" class="btn btn-primary">Iniciar Sesión</button>
-                        </a>
-                        <a href="/create_user">
-                            <button type="button" class="btn btn-secondary">Registrarse</button>
-                        </a>
-                    </div>
+                            <a href="/accounts/login/" type="button" class="btn btn-primary">Iniciar</a>
+                            <a href ="/create_user/"type="button" class="btn btn-secondary">Registrar</a>
+                          </div>
                     {% endblock %}
                 </form>
-            </div>
         </div>
 
     </nav>
     {% block body %} {% endblock %}
-    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
-    <script src="{% static 'js/popper.js' %}"></script>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
